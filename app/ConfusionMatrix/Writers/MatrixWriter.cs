@@ -33,6 +33,6 @@ public abstract class ConfusionMatrixWriter:MatrixWriter
         output.WriteLine("%Tagging Tools, {0:ddd MMM d HH:mm:ss yyyy}", DateTime.Now);
         output.WriteLine("%Equal\t\t: {0} ({1:0.00}%)", equalQuantity, equalPercentage);
         output.WriteLine("%Different\t: {0}", differentQuantity);
-        output.WriteLine("%Fernando Rodriguez, ferrod20@gmail.com");
+        output.WriteLine("%http://ferrod20.github.io/taggingTools/");
     }
 }

@@ -3,8 +3,6 @@ Tagging tools
 
 Useful set of tools for POST (part of speech tagging) common tasks like confusion matrix generation and file split.
 
-See more at http://ferrod20.github.io/taggingTools/
-
 ## Confusion matrix generator
 Define 2 files to compare (gold standard and tagged file) and build the confusion matrix. The output result can be set as LaTex or plain text.
 You can see here an example of a pdf matrix confusion output

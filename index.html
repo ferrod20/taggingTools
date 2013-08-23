@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Tagging Tools : Useful set of tools for part of speech (POS) tagging" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Tagging Tools</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/ferrod20/taggingTools">View on GitHub</a>
+
+          <h1 id="project_title">Tagging Tools</h1>
+          <h2 id="project_tagline">Useful set of tools for part of speech (POS) tagging</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/ferrod20/taggingTools/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/ferrod20/taggingTools/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a name="tagging-tools" class="anchor" href="#tagging-tools"><span class="octicon octicon-link"></span></a>Tagging Tools</h1>
+
+<p>Useful set of tools for POST common tasks like confusion matrix generation and file split.</p>
+
+<h2>
+<a name="confusion-matrix-generator" class="anchor" href="#confusion-matrix-generator"><span class="octicon octicon-link"></span></a>Confusion matrix generator</h2>
+
+<p>Define 2 files to compare (gold standard and tagged file) and build the confusion matrix. The output result can be set as LaTex or plain text.
+You can see here an example of a pdf matrix confusion output</p>
+
+<h3>
+<a name="command" class="anchor" href="#command"><span class="octicon octicon-link"></span></a>Command:</h3>
+
+<pre><code>-compare &lt;goldStandard&gt; &lt;fileToCompare&gt; &lt;output&gt; [options]
+</code></pre>
+
+<p>Compares <code>goldStandard</code> file against <code>fileToCompare</code> generating a confusion matrix as output.</p>
+
+<p><code>[options]</code> is one or more of the followings:</p>
+
+<p><code>-l</code>: Set latex output, default is text plain output.</p>
+
+<p><code>-t=&lt;matrixTitle&gt;</code>: Matrix title to be written on output file.</p>
+
+<p><code>-rt=&lt;rowTitle&gt;</code>: Row title to be written on output file.</p>
+
+<p><code>-ct=&lt;columnTitle&gt;</code>: Column title to be written on output file.</p>
+
+<p><code>-SC=&lt;specificCellsFile&gt;</code>: Use a custom file to set specific cells to be showed .</p>
+
+<p><code>-T=&lt;translationFile&gt;</code>: Specify a custom tags translation file to be used on comparision. The 
+translation is applied to <code>fileToCompare</code> tags in order to convert them to goldStandard tags.</p>
+
+<p><code>-s=&lt;size&gt;</code>: If latex output is set, size sets matrix size. If text plain output is set, size sets quantity of different words for each cell.</p>
+
+<h2>
+<a name="files-splitter" class="anchor" href="#files-splitter"><span class="octicon octicon-link"></span></a>Files splitter:</h2>
+
+<p>This tool splits a file in several parts, preserving sentences.
+Optionally generates the complementary file of each part extracted.</p>
+
+<h3>
+<a name="command-1" class="anchor" href="#command-1"><span class="octicon octicon-link"></span></a>Command:</h3>
+
+<pre><code>-split &lt;file&gt; &lt;parts&gt; [options]
+</code></pre>
+
+<p><code>[options]</code> is one or more of the followings:</p>
+
+<p><code>-c[=complementPrefix]</code>: Generate a complement file for each part. If specified, complement file names will be generated using <code>complementPrefix</code> as the base name. Default complementPrefix is 'Comp'</p>
+
+<p><code>-r</code>: Random selection of senteneces.</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Tagging Tools maintained by <a href="https://github.com/ferrod20">ferrod20</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>

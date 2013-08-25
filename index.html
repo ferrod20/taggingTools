@@ -34,20 +34,25 @@
         <h1>
 <a name="tagging-tools" class="anchor" href="#tagging-tools"><span class="octicon octicon-link"></span></a>Tagging Tools</h1>
 
-<p>Useful set of tools for POST common tasks like confusion matrix generation and file split.</p>
+<p>Useful set of tools for POST (part of speech tagging) common tasks like confusion matrix generation and file split.</p>
 
 <h2>
 <a name="confusion-matrix-generator" class="anchor" href="#confusion-matrix-generator"><span class="octicon octicon-link"></span></a>Confusion matrix generator</h2>
 
-<p>Define 2 files to compare (gold standard and tagged file) and build the confusion matrix. The output result can be set as LaTex or plain text.
-You can see here an example of a pdf matrix confusion output:</p>
+<p>Define 2 files to compare (gold standard and tagged file) and build the confusion matrix. The output result can be set as LaTex or plain text. </p>
 
-<p><img src="../images/confusionMatrixPdf.png" alt="matrix confusion pdf example"></p>
+<p>You can see below an example of a pdf confusion matrix output. By default cells with biggest differences are showed</p>
+
+<p><img src="https://raw.github.com/ferrod20/taggingTools/gh-pages/images/confusionMatrixPdf.png" alt="pdf confusion matrix example"></p>
+
+<p>In the next example you can see a plain text confusion matrix output. Notice that for each cell appears the words which it's tags diffiers</p>
+
+<p><img src="https://raw.github.com/ferrod20/taggingTools/gh-pages/images/plainTextConfusionMatrixComparision" alt="plain text confusion matrix example"></p>
 
 <h3>
 <a name="command" class="anchor" href="#command"><span class="octicon octicon-link"></span></a>Command:</h3>
 
-<pre><code>-compare &lt;goldStandard&gt; &lt;fileToCompare&gt; &lt;output&gt; [options]
+<pre><code>tt -compare &lt;goldStandard&gt; &lt;fileToCompare&gt; &lt;output&gt; [options]
 </code></pre>
 
 <p>Compares <code>goldStandard</code> file against <code>fileToCompare</code> generating a confusion matrix as output.</p>
@@ -78,7 +83,7 @@ Optionally generates the complementary file of each part extracted.</p>
 <h3>
 <a name="command-1" class="anchor" href="#command-1"><span class="octicon octicon-link"></span></a>Command:</h3>
 
-<pre><code>-split &lt;file&gt; &lt;parts&gt; [options]
+<pre><code>tt -split &lt;file&gt; &lt;parts&gt; [options]
 </code></pre>
 
 <p><code>[options]</code> is one or more of the followings:</p>

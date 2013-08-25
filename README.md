@@ -10,7 +10,7 @@ You can see below an example of a pdf confusion matrix output. By default cells 
 
 In the next example you can see a plain text confusion matrix output. Notice that for each cell appears the words which it's tags diffiers
 
-![plain text confusion matrix example](https://raw.github.com/ferrod20/taggingTools/gh-pages/images/plainTextConfusionMatrixComparision)
+![plain text confusion matrix example](https://raw.github.com/ferrod20/taggingTools/gh-pages/images/plainTextConfusionMatrixComparision.png)
 
 ###Command:
 ```

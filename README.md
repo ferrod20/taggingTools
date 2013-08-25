@@ -38,7 +38,7 @@ translation is applied to `fileToCompare` tags in order to convert them to goldS
 
 ##Files splitter:
 This tool splits a file in several parts, preserving sentences.
-Optionally generates the complementary file of each part extracted.
+Optionally generates the complementary file for each extracted part.
 
 ###Command:
 ```

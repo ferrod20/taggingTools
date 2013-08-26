@@ -1,15 +1,22 @@
-Tagging tools
-============
-
+# Tagging Tools
 Useful set of tools for POST (part of speech tagging) common tasks like confusion matrix generation and file split.
 
 ## Confusion matrix generator
-Define 2 files to compare (gold standard and tagged file) and build the confusion matrix. The output result can be set as LaTex or plain text.
-You can see here an example of a pdf matrix confusion output
+Define 2 files to compare (gold standard and tagged file) and build the confusion matrix. The output result can be set as LaTex or plain text. 
 
-###Command:
-```
--compare <goldStandard> <fileToCompare> <output> [options]
+You can see below an example of a pdf confusion matrix output. By default cells with biggest differences are showed.
+
+###Pdf output:
+![pdf confusion matrix example](https://raw.github.com/ferrod20/taggingTools/gh-pages/images/confusionMatrixPdf.png)
+
+In the next example you can see a plain text confusion matrix output. Notice that for each cell appears the words which it's tags differs.
+
+###Plain text output:
+![plain text confusion matrix example](https://raw.github.com/ferrod20/taggingTools/gh-pages/images/plainTextConfusionMatrixComparision.png)
+
+Command:
+```dos
+tt -compare <goldStandard> <fileToCompare> <output> [options]
 ```
 
 Compares `goldStandard` file against `fileToCompare` generating a confusion matrix as output.
@@ -33,11 +40,11 @@ translation is applied to `fileToCompare` tags in order to convert them to goldS
 
 ##Files splitter:
 This tool splits a file in several parts, preserving sentences.
-Optionally generates the complementary file of each part extracted.
+Optionally generates the complementary file for each extracted part.
 
-###Command:
-```
--split <file> <parts> [options]
+Command:
+```dos
+tt -split <file> <parts> [options]
 ```
 `[options]` is one or more of the followings:
 

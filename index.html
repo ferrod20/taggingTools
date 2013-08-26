@@ -43,16 +43,21 @@
 
 <p>You can see below an example of a pdf confusion matrix output. By default cells with biggest differences are showed</p>
 
+<h3>
+<a name="pdf-output" class="anchor" href="#pdf-output"><span class="octicon octicon-link"></span></a>Pdf output:</h3>
+
 <p><img src="https://raw.github.com/ferrod20/taggingTools/gh-pages/images/confusionMatrixPdf.png" alt="pdf confusion matrix example"></p>
 
 <p>In the next example you can see a plain text confusion matrix output. Notice that for each cell appears the words which it's tags diffiers</p>
 
+<h3>
+<a name="plain-text-output" class="anchor" href="#plain-text-output"><span class="octicon octicon-link"></span></a>Plain text output:</h3>
+
 <p><img src="https://raw.github.com/ferrod20/taggingTools/gh-pages/images/plainTextConfusionMatrixComparision.png" alt="plain text confusion matrix example"></p>
 
-<h3>
-<a name="command" class="anchor" href="#command"><span class="octicon octicon-link"></span></a>Command:</h3>
+<p>Command:</p>
 
-<pre><code>tt -compare &lt;goldStandard&gt; &lt;fileToCompare&gt; &lt;output&gt; [options]
+<pre lang="dos"><code>tt -compare &lt;goldStandard&gt; &lt;fileToCompare&gt; &lt;output&gt; [options]
 </code></pre>
 
 <p>Compares <code>goldStandard</code> file against <code>fileToCompare</code> generating a confusion matrix as output.</p>
@@ -80,10 +85,9 @@ translation is applied to <code>fileToCompare</code> tags in order to convert th
 <p>This tool splits a file in several parts, preserving sentences.
 Optionally generates the complementary file for each extracted part.</p>
 
-<h3>
-<a name="command-1" class="anchor" href="#command-1"><span class="octicon octicon-link"></span></a>Command:</h3>
+<p>Command:</p>
 
-<pre><code>tt -split &lt;file&gt; &lt;parts&gt; [options]
+<pre lang="dos"><code>tt -split &lt;file&gt; &lt;parts&gt; [options]
 </code></pre>
 
 <p><code>[options]</code> is one or more of the followings:</p>

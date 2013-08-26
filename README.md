@@ -4,12 +4,12 @@ Useful set of tools for POST (part of speech tagging) common tasks like confusio
 ## Confusion matrix generator
 Define 2 files to compare (gold standard and tagged file) and build the confusion matrix. The output result can be set as LaTex or plain text. 
 
-You can see below an example of a pdf confusion matrix output. By default cells with biggest differences are showed
+You can see below an example of a pdf confusion matrix output. By default cells with biggest differences are showed.
 
 ###Pdf output:
 ![pdf confusion matrix example](https://raw.github.com/ferrod20/taggingTools/gh-pages/images/confusionMatrixPdf.png)
 
-In the next example you can see a plain text confusion matrix output. Notice that for each cell appears the words which it's tags diffiers
+In the next example you can see a plain text confusion matrix output. Notice that for each cell appears the words which it's tags differs.
 
 ###Plain text output:
 ![plain text confusion matrix example](https://raw.github.com/ferrod20/taggingTools/gh-pages/images/plainTextConfusionMatrixComparision.png)

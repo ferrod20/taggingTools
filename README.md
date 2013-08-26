@@ -6,14 +6,16 @@ Define 2 files to compare (gold standard and tagged file) and build the confusio
 
 You can see below an example of a pdf confusion matrix output. By default cells with biggest differences are showed
 
+###Pdf output:
 ![pdf confusion matrix example](https://raw.github.com/ferrod20/taggingTools/gh-pages/images/confusionMatrixPdf.png)
 
 In the next example you can see a plain text confusion matrix output. Notice that for each cell appears the words which it's tags diffiers
 
+###Plain text output:
 ![plain text confusion matrix example](https://raw.github.com/ferrod20/taggingTools/gh-pages/images/plainTextConfusionMatrixComparision.png)
 
-###Command:
-```
+Command:
+```dos
 tt -compare <goldStandard> <fileToCompare> <output> [options]
 ```
 
@@ -40,8 +42,8 @@ translation is applied to `fileToCompare` tags in order to convert them to goldS
 This tool splits a file in several parts, preserving sentences.
 Optionally generates the complementary file for each extracted part.
 
-###Command:
-```
+Command:
+```dos
 tt -split <file> <parts> [options]
 ```
 `[options]` is one or more of the followings:

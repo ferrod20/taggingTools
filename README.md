@@ -14,7 +14,7 @@ In the next example you can see a plain text confusion matrix output. Notice tha
 ###Plain text output:
 ![plain text confusion matrix example](https://raw.github.com/ferrod20/taggingTools/gh-pages/images/plainTextConfusionMatrixComparision.png)
 
-###Translate tags:
+###Tags translation:
 You can also use a tags translation file in order to convert tags from one tagset into another before the comparision occurs. Penn Treebank-C5 translation is included as example.
 
 Command:

@@ -106,7 +106,7 @@ Compares goldStandard file against fileToCompare generating a confusion matrix a
 
     private static void Compare(IList<string> args)
         {
-            if (args.Count < 3)
+            if (args.Count < 4)
             {
                 Console.WriteLine("Use -compare <goldStandard> <fileToCompare> <output> [options]");
                 Console.WriteLine("-help for more information");

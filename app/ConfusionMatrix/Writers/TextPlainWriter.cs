@@ -18,6 +18,7 @@ public class TextPlainWriter : ConfusionMatrixWriter
         output.WriteLine("{0} | {1} | differences", conf.RowTitle, conf.ColumnTitle);
         output.WriteLine();
 
+        confusionMatrix.OrderByError();
         var cells = confusionMatrix.GetCells(conf.RowTags, conf.ColumnTags);
 
         foreach (var cell in cells)

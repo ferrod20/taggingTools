@@ -34,7 +34,7 @@ Compares `goldStandard` file against `fileToCompare` generating a confusion matr
 
 `-ct=<columnTitle>`: Column title to be written on output file.
 
-`-SC=<specificCellsFile>`: Use a custom file to set specific cells to be showed .
+`-SC=<specificCellsFile>`: Use a custom file to set specific cells to be showed.
 
 `-T=<translationFile>`: Specify a custom tags translation file to be used on comparision. The 
 translation is applied to `fileToCompare` tags in order to convert them to goldStandard tags.
@@ -54,3 +54,6 @@ tt -split <file> <parts> [options]
 `-c[=complementPrefix]`: Generate a complement file for each part. If specified, complement file names will be generated using `complementPrefix` as the base name. Default complementPrefix is 'Comp'
 
 `-r`: Random selection of senteneces.
+
+##Binaries:
+Linux and Windows binaries are availables here: https://github.com/ferrod20/taggingTools/tree/binaries

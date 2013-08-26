@@ -43,7 +43,7 @@ public class Cell : IComparer<Cell>
 
     public override string ToString()
     {
-        return string.Format("{0}(gold)-{1}(prueba): {2}", GoldStandardTag, TryTag, TotalWords);
+        return string.Format("{0}(gold)-{1}(prueba): {2}", GoldStandardTag, TryTag, TotalWordsOcurrencies);
     }
 
     public int Compare(Cell x, Cell y)
@@ -55,8 +55,16 @@ public class Cell : IComparer<Cell>
     {
         return words.OrderByDescending(s => s.Value).Take(howMany);
     }
-    
+
     public int TotalWords
+    {
+        get
+        {
+            return words.Count;
+        }
+    }
+
+    public int TotalWordsOcurrencies
     {
         get
         {

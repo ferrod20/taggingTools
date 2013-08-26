@@ -27,7 +27,7 @@ public class ConfusionMatrix : Matrix, IEnumerable<Cell>
     {
         foreach (var çell in cells)
             if (çell.TryTag == tryTag && çell.GoldStandardTag == goldStandardTag)
-                return çell.TotalWords;
+                return çell.TotalWordsOcurrencies;
 
         return 0;
     }
@@ -40,13 +40,13 @@ public class ConfusionMatrix : Matrix, IEnumerable<Cell>
             foreach (var cell in cells)
                 if (columnTags.Contains(cell.TryTag) && rowTags.Contains(cell.GoldStandardTag))
                 {
-                    errors.Add(cell.TotalWords);
+                    errors.Add(cell.TotalWordsOcurrencies);
                     if (errors.Count == howMany)
                         break;
                 }
         }
         else
-            errors = cells.Select(tags => tags.TotalWords).Take(howMany).ToList();
+            errors = cells.Select(tags => tags.TotalWordsOcurrencies).Take(howMany).ToList();
 
         return errors;
     }
@@ -79,7 +79,7 @@ public class ConfusionMatrix : Matrix, IEnumerable<Cell>
 
     public ConfusionMatrix OrderByError()
     {
-        cells = cells.OrderByDescending(s => s.TotalWords).ToList();
+        cells = cells.OrderByDescending(s => s.TotalWordsOcurrencies).ToList();
         return this;
     }
         

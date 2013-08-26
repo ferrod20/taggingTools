@@ -40,7 +40,7 @@ public class MatrixInProcess: Matrix
 
     private int ErrorsCount()
     {
-        return cells.Sum(s => s.TotalWords);
+        return cells.Sum(s => s.TotalWordsOcurrencies);
     }        
         
     public ConfusionMatrix FinalizeProcces()

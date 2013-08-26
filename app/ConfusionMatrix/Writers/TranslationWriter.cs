@@ -17,7 +17,7 @@ public class TranslationWriter: MatrixWriter
         foreach (var cell in confusionMatrix)
             if (!included.Contains(cell.GoldStandardTag))
             {
-                output.WriteLine(cell.GoldStandardTag + " " + cell.TryTag + " " + cell.TotalWords);
+                output.WriteLine(cell.GoldStandardTag + " " + cell.TryTag + " " + cell.TotalWordsOcurrencies);
                 included.Add(cell.GoldStandardTag);
             }
 

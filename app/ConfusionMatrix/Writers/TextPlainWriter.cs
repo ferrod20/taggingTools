@@ -22,9 +22,13 @@ public class TextPlainWriter : ConfusionMatrixWriter
 
         foreach (var cell in cells)
         {
-            output.WriteLine("{0} {1} {2}", cell.GoldStandardTag, cell.TryTag , cell.TotalWords);
+            output.WriteLine("{0} {1} {2}", cell.GoldStandardTag, cell.TryTag , cell.TotalWordsOcurrencies);
+            
             foreach (var word in cell.GetWordsWithDifference(conf.MatrixOutputSize))
                 output.WriteLine("\t{0} {1}", word.Key, word.Value);
+
+            if(cell.TotalWords > conf.MatrixOutputSize)
+                output.WriteLine("\t...");
         }
 
         output.Close();

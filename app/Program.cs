@@ -69,24 +69,37 @@ Compares goldStandard file against fileToCompare generating a confusion matrix a
             else
             {
                 var file = args[1];
-                var parts = args[2];
+                int parts;
+                var partsOk = int.TryParse(args[2], out parts);
+                var fileExists = File.Exists(file);
 
-                var randomSentencesChoose = args.Contains("-r");
-                var complementPrefix = "Comp";
-                var generateComplement = args.OptionPresent("c", ref complementPrefix);
-
-                Console.WriteLine("Splitting: {0} in {1} parts", Path.GetFileName(file), parts);
-                if(generateComplement)
-                    Console.WriteLine("Generating complement for each part");
-                Console.WriteLine();
-
-                FilesSplitter filesSplitter;
-                if(randomSentencesChoose)
-                    filesSplitter = new RandomFilesSplitter(file, int.Parse(parts), generateComplement, complementPrefix);
+                var allOk = partsOk && fileExists;
+                if (!allOk)
+                {
+                    if (!fileExists)
+                        Console.WriteLine("The file " + file + " doesn't exists.");
+                    if(!partsOk)
+                        Console.WriteLine("Must write an integer to set how many parts do you want to split the file in.");
+                }
                 else
-                    filesSplitter = new SimpleFilesSplitter(file, int.Parse(parts), generateComplement, complementPrefix);
-                
-                filesSplitter.Execute();
+                {
+                    var randomSentencesChoose = args.Contains("-r");
+                    var complementPrefix = "Comp";
+                    var generateComplement = args.OptionPresent("c", ref complementPrefix);
+
+                    Console.WriteLine("Splitting: {0} in {1} parts", Path.GetFileName(file), parts);
+                    if (generateComplement)
+                        Console.WriteLine("Generating complement for each part");
+                    Console.WriteLine();
+
+                    FilesSplitter filesSplitter;
+                    if (randomSentencesChoose)
+                        filesSplitter = new RandomFilesSplitter(file, parts, generateComplement, complementPrefix);
+                    else
+                        filesSplitter = new SimpleFilesSplitter(file, parts, generateComplement, complementPrefix);
+
+                    filesSplitter.Execute();
+                }
             }
         }
 
@@ -104,29 +117,47 @@ Compares goldStandard file against fileToCompare generating a confusion matrix a
                 var fileToCompare = args[2];
                 var outputFile = args[3];
 
-                var goldStandardFileName = Path.GetFileName(goldStandardFile);
-                var fileToCompareName = Path.GetFileName(fileToCompare);
-                var outputFileName = Path.GetFileName(outputFile);
+                var errorMessage = FilesExists(goldStandardFile, fileToCompare);                
 
-                string title = outputFileName, rowTitle = goldStandardFileName, columnTitle = fileToCompareName, specificCellsFile = "", translationFile = "";
-                var outputForLatex = args.Contains("-l");
-                var size = outputForLatex ? 10 : 30;
+                if (errorMessage.Any())
+                    foreach (var error in errorMessage)
+                        Console.WriteLine(error);                        
+                else
+                {
+                    var goldStandardFileName = Path.GetFileName(goldStandardFile);
+                    var fileToCompareName = Path.GetFileName(fileToCompare);
+                    var outputFileName = Path.GetFileName(outputFile);
 
-                args.OptionPresent("t", ref title);
-                args.OptionPresent("rt", ref rowTitle);
-                args.OptionPresent("ct", ref columnTitle);
-                args.OptionPresent("SC", ref specificCellsFile);
-                args.OptionPresent("T", ref translationFile);
-                args.OptionPresent("s", ref size);
+                    string title = outputFileName, rowTitle = goldStandardFileName, columnTitle = fileToCompareName, specificCellsFile = "", translationFile = "";
+                    var outputForLatex = args.Contains("-l");
+                    var size = outputForLatex ? 10 : 30;
 
-                Console.WriteLine((outputForLatex ? "(latex)" : "") + "Comparing: {0}(gold standard) against {1}", goldStandardFileName , fileToCompareName);
-                Console.WriteLine("output: {0}", outputFileName);
-                Console.WriteLine();
+                    args.OptionPresent("t", ref title);
+                    args.OptionPresent("rt", ref rowTitle);
+                    args.OptionPresent("ct", ref columnTitle);
+                    args.OptionPresent("SC", ref specificCellsFile);
+                    args.OptionPresent("T", ref translationFile);
+                    args.OptionPresent("s", ref size);
 
-                var comparator = new Comparator(goldStandardFile, fileToCompare, outputFile);
-                var translation = string.IsNullOrWhiteSpace(translationFile) ? new EmptyTranslation():(ITranslation)new Translation(translationFile);
-                comparator.SetOptions(outputForLatex, title, rowTitle, columnTitle, translation, specificCellsFile, size);
-                comparator.Compare();
+                    Console.WriteLine((outputForLatex ? "(latex)" : "") + "Comparing: {0}(gold standard) against {1}", goldStandardFileName, fileToCompareName);
+                    Console.WriteLine("output: {0}", outputFileName);
+                    Console.WriteLine();
+
+                    var comparator = new Comparator(goldStandardFile, fileToCompare, outputFile);
+                    var translation = string.IsNullOrWhiteSpace(translationFile) ? new EmptyTranslation() : (ITranslation)new Translation(translationFile);
+                    comparator.SetOptions(outputForLatex, title, rowTitle, columnTitle, translation, specificCellsFile, size);
+                    comparator.Compare();    
+                }
             }
-        }        
+        }
+
+    private static List<string> FilesExists(params string[] files)
+    {
+        var errorMessage = new List<string>();
+        foreach (var file in files)
+            if(!File.Exists(file))
+                errorMessage.Add( "The file "+ file + " doesn't exists.");
+        
+        return errorMessage;
     }
+}

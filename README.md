@@ -55,5 +55,15 @@ tt -split <file> <parts> [options]
 
 `-r`: Random selection of senteneces.
 
+##File format:
+Sentences are composed of tokens (words and symbols).
+
+Each line should contains a token. Empty lines will be used to denote sentence break.
+
+For comparision operatios, each line must contain the token followed by a tab and the POS tag.
+
+Example:
+![file format example](https://raw.github.com/ferrod20/taggingTools/gh-pages/images/fileFormat.png)
+
 ##Binaries:
 Linux and Windows binaries are availables here: https://github.com/ferrod20/taggingTools/tree/binaries

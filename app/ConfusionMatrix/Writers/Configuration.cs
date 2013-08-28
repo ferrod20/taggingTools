@@ -27,7 +27,7 @@ public class Configuration
     {
         if (!string.IsNullOrWhiteSpace(specificCellsFile))
         {
-            var specificRowsAndColumns = File.ReadAllText(specificCellsFile).Split('\n');
+            var specificRowsAndColumns = File.ReadAllText(specificCellsFile).Split(new[] { Environment.NewLine }, StringSplitOptions.None);
             ColumnTags = new List<string>();
             RowTags = new List<string>();
 

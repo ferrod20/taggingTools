@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
@@ -96,8 +97,8 @@ public class Comparator
     {
         matrixInProcess = new MatrixInProcess();
         int i = 0, j = 0, point = 1;
-        var goldStandard = File.ReadAllText(goldStandardFile).Split('\n');
-        var toCompare = File.ReadAllText(fileToCompare).Split('\n');
+        var goldStandard = File.ReadAllText(goldStandardFile).Split(new [] { Environment.NewLine }, StringSplitOptions.None);
+        var toCompare = File.ReadAllText(fileToCompare).Split(new[] { Environment.NewLine }, StringSplitOptions.None);
         var goldStandardSize = goldStandard.Length;
         var sizeToCompare = toCompare.Length;
         var part = goldStandardSize/20;

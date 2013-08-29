@@ -34,21 +34,21 @@
         <h1>
 <a name="tagging-tools" class="anchor" href="#tagging-tools"><span class="octicon octicon-link"></span></a>Tagging Tools</h1>
 
-<p>Useful set of tools for POST (part of speech tagging) common tasks like confusion matrix generation and file split.</p>
+<p>Useful set of tools for POST (part of speech tagging) common tasks such as confusion matrix generation and file split.</p>
 
 <h2>
 <a name="confusion-matrix-generator" class="anchor" href="#confusion-matrix-generator"><span class="octicon octicon-link"></span></a>Confusion matrix generator</h2>
 
-<p>Define 2 files to compare (gold standard and tagged file) and build the confusion matrix. The output result can be set as LaTex or plain text. </p>
+<p>Define 2 files to compare (gold standard and tagged file) and build the confusion matrix. The output can be set as LaTex or plain text.</p>
 
-<p>You can see below an example of a pdf confusion matrix output. By default cells with biggest differences are showed.</p>
+<p>You can see below an example of a pdf confusion matrix output. By default the cells with the biggest differences are shown.</p>
 
 <h3>
 <a name="pdf-output" class="anchor" href="#pdf-output"><span class="octicon octicon-link"></span></a>Pdf output:</h3>
 
 <p><img src="https://raw.github.com/ferrod20/taggingTools/gh-pages/images/confusionMatrixPdf.png" alt="pdf confusion matrix example"></p>
 
-<p>In the next example you can see a plain text confusion matrix output. Notice that for each cell appears the words which it's tags differs.</p>
+<p>In the next example you can see a plain text confusion matrix output. Notice that for each cell the file shows the words whose tags differ.</p>
 
 <h3>
 <a name="plain-text-output" class="anchor" href="#plain-text-output"><span class="octicon octicon-link"></span></a>Plain text output:</h3>
@@ -58,7 +58,7 @@
 <h3>
 <a name="tags-translation" class="anchor" href="#tags-translation"><span class="octicon octicon-link"></span></a>Tags translation:</h3>
 
-<p>You can also use a tags translation file in order to convert tags from one tagset into another before the comparision occurs. Penn Treebank-C5 translation is included as example.</p>
+<p>You can also use a tags translation file in order to convert tags from one tagset into another before the comparison occurs. Penn Treebank-C5 translation is included as an example.</p>
 
 <p>Command:</p>
 
@@ -67,7 +67,7 @@
 
 <p>Compares <code>goldStandard</code> file against <code>fileToCompare</code> generating a confusion matrix as output.</p>
 
-<p><code>[options]</code> is one or more of the followings:</p>
+<p><code>[options]</code> is one or more of the following:</p>
 
 <p><code>-l</code>: Set latex output, default is text plain output.</p>
 
@@ -77,27 +77,27 @@
 
 <p><code>-ct=&lt;columnTitle&gt;</code>: Column title to be written on output file.</p>
 
-<p><code>-SC=&lt;specificCellsFile&gt;</code>: Use a custom file to set specific cells to be showed.</p>
+<p><code>-SC=&lt;specificCellsFile&gt;</code>: Use a custom file to set specific cells to be shown.</p>
 
-<p><code>-T=&lt;translationFile&gt;</code>: Specify a custom tags translation file to be used on comparision. The 
+<p><code>-T=&lt;translationFile&gt;</code>: Specify a custom tags translation file to be used on comparison. The 
 translation is applied to <code>fileToCompare</code> tags in order to convert them to goldStandard tags.</p>
 
-<p><code>-s=&lt;size&gt;</code>: If latex output is set, size sets matrix size. If text plain output is set, size sets quantity of different words for each cell.</p>
+<p><code>-s=&lt;size&gt;</code>: If latex output is set, size sets matrix size. If plain text output is set, size sets quantity of different words for each cell.</p>
 
 <h2>
 <a name="files-splitter" class="anchor" href="#files-splitter"><span class="octicon octicon-link"></span></a>Files splitter:</h2>
 
 <p>This tool splits a file in several parts, preserving sentences.
-Optionally generates the complementary file for each extracted part.</p>
+It optionally generates the complementary file for each extracted part.</p>
 
 <p>Command:</p>
 
 <pre lang="dos"><code>tt -split &lt;file&gt; &lt;parts&gt; [options]
 </code></pre>
 
-<p><code>[options]</code> is one or more of the followings:</p>
+<p><code>[options]</code> is one or more of the following:</p>
 
-<p><code>-c[=complementPrefix]</code>: Generate a complement file for each part. If specified, complement file names will be generated using <code>complementPrefix</code> as the base name. Default complementPrefix is 'Comp'</p>
+<p><code>-c[=complementPrefix]</code>: Generates a complement file for each part. If specified, complement file names will be generated using <code>complementPrefix</code> as the base name. Default complementPrefix is 'Comp'</p>
 
 <p><code>-r</code>: Random selection of senteneces.</p>
 
@@ -106,9 +106,9 @@ Optionally generates the complementary file for each extracted part.</p>
 
 <p>Sentences are composed of tokens (words and symbols).</p>
 
-<p>Each line should contains a token. Empty lines will be used to denote sentence break.</p>
+<p>Each line should contain a token. Empty lines will be used to denote sentence break.</p>
 
-<p>For comparision operatios, each line must contain the token followed by a tab and the POS tag.</p>
+<p>For comparison operations, each line must contain the token followed by a tab and the POS tag.</p>
 
 <p>Example:
 <img src="https://raw.github.com/ferrod20/taggingTools/gh-pages/images/fileFormat.png" alt="file format example"></p>
@@ -116,7 +116,7 @@ Optionally generates the complementary file for each extracted part.</p>
 <h2>
 <a name="binaries" class="anchor" href="#binaries"><span class="octicon octicon-link"></span></a>Binaries:</h2>
 
-<p>Linux and Windows binaries are availables here: <a href="https://github.com/ferrod20/taggingTools/tree/binaries">https://github.com/ferrod20/taggingTools/tree/binaries</a></p>
+<p>Linux and Windows binaries are available here: <a href="https://github.com/ferrod20/taggingTools/tree/binaries">https://github.com/ferrod20/taggingTools/tree/binaries</a></p>
       </section>
     </div>
 

@@ -66,4 +66,4 @@ Example:
 ![file format example](https://raw.github.com/ferrod20/taggingTools/gh-pages/images/fileFormat.png)
 
 ##Binaries:
-Linux and Windows binaries are available here: https://github.com/ferrod20/taggingTools/tree/binaries
+Linux and Windows binaries are available [here](https://github.com/ferrod20/taggingTools/tree/binaries)

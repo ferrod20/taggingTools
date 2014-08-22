@@ -32,9 +32,10 @@
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
         <h1>
-<a name="tagging-tools" class="anchor" href="#tagging-tools"><span class="octicon octicon-link"></span></a>Tagging Tools</h1>
+<a name="tagging-tools-useful-set-of-tools-for-post-part-of-speech-tagging" class="anchor" href="#tagging-tools-useful-set-of-tools-for-post-part-of-speech-tagging"><span class="octicon octicon-link"></span></a>Tagging Tools: Useful set of tools for <a href="http://en.wikipedia.org/wiki/Part-of-speech_tagging">POST (Part-of-speech tagging)</a>
+</h1>
 
-<p>Useful set of tools for <a href="http://en.wikipedia.org/wiki/Part-of-speech_tagging">POST (Part-of-speech tagging)</a>  common tasks such as confusion matrix generation and file split. </p>
+<p>Tagging Tools allows you to perform common tasks such as visual confusion matrix generation and complex file split. </p>
 
 <h2>
 <a name="confusion-matrix-generator" class="anchor" href="#confusion-matrix-generator"><span class="octicon octicon-link"></span></a>Confusion matrix generator</h2>
@@ -44,14 +45,14 @@
 <p>You can see below an example of a pdf confusion matrix output. By default the cells with the biggest differences are shown.</p>
 
 <h3>
-<a name="pdf-output" class="anchor" href="#pdf-output"><span class="octicon octicon-link"></span></a>Pdf output:</h3>
+<a name="pdf-output-example" class="anchor" href="#pdf-output-example"><span class="octicon octicon-link"></span></a>Pdf output example:</h3>
 
 <p><img src="https://raw.github.com/ferrod20/taggingTools/gh-pages/images/confusionMatrixPdf.png" alt="pdf confusion matrix example"></p>
 
 <p>In the next example you can see a plain text confusion matrix output. Notice that for each cell the file shows the words whose tags differ.</p>
 
 <h3>
-<a name="plain-text-output" class="anchor" href="#plain-text-output"><span class="octicon octicon-link"></span></a>Plain text output:</h3>
+<a name="plain-text-output-example" class="anchor" href="#plain-text-output-example"><span class="octicon octicon-link"></span></a>Plain text output example:</h3>
 
 <p><img src="https://raw.github.com/ferrod20/taggingTools/gh-pages/images/plainTextConfusionMatrixComparision.png" alt="plain text confusion matrix example"></p>
 
@@ -67,24 +68,18 @@
 
 <p>Compares <code>goldStandard</code> file against <code>fileToCompare</code> generating a confusion matrix as output.</p>
 
-<p><code>[options]</code> is one or more of the following:</p>
+<p>Where <code>[options]</code> is one or more of the following:</p>
 
-<p><code>-l</code>: Set latex output, default is text plain output.</p>
-
-<p><code>-t=&lt;matrixTitle&gt;</code>: Matrix title to be written on output file.</p>
-
-<p><code>-rt=&lt;rowTitle&gt;</code>: Row title to be written on output file.</p>
-
-<p><code>-ct=&lt;columnTitle&gt;</code>: Column title to be written on output file.</p>
-
-<p><code>-SC=&lt;specificCellsFile&gt;</code>: Use a custom file to set specific cells to be shown.</p>
-
-<p><code>-T=&lt;translationFile&gt;</code>: Specify a custom tags translation file to be used on comparison. The 
-translation is applied to <code>fileToCompare</code> tags in order to convert them to goldStandard tags.</p>
-
-<p><code>-s=&lt;size&gt;</code>: If latex output is set, size sets matrix size. If plain text output is set, size sets quantity of different words for each cell.</p>
-
-<h2>
+<ul>
+<li><p><code>-l</code>: Set latex output, default is text plain output.</p></li>
+<li><p><code>-t=&lt;matrixTitle&gt;</code>: Matrix title to be written on output file.</p></li>
+<li><p><code>-rt=&lt;rowTitle&gt;</code>: Row title to be written on output file.</p></li>
+<li><p><code>-ct=&lt;columnTitle&gt;</code>: Column title to be written on output file.</p></li>
+<li><p><code>-SC=&lt;specificCellsFile&gt;</code>: Use a custom file to set specific cells to be shown.</p></li>
+<li><p><code>-T=&lt;translationFile&gt;</code>: Specify a custom tags translation file to be used on comparison. The 
+translation is applied to <code>fileToCompare</code> tags in order to convert them to goldStandard tags.</p></li>
+<li><p><code>-s=&lt;size&gt;</code>: If latex output is set, size sets matrix size. If plain text output is set, size sets quantity of different words for each cell.</p></li>
+</ul><h2>
 <a name="files-splitter" class="anchor" href="#files-splitter"><span class="octicon octicon-link"></span></a>Files splitter:</h2>
 
 <p>This tool splits a file in several parts, preserving sentences.
@@ -95,13 +90,12 @@ It optionally generates the complementary file for each extracted part.</p>
 <pre lang="dos"><code>tt -split &lt;file&gt; &lt;parts&gt; [options]
 </code></pre>
 
-<p><code>[options]</code> is one or more of the following:</p>
+<p>Where <code>[options]</code> is one or more of the following:</p>
 
-<p><code>-c[=complementPrefix]</code>: Generates a complement file for each part. If specified, complement file names will be generated using <code>complementPrefix</code> as the base name. Default complementPrefix is 'Comp'</p>
-
-<p><code>-r</code>: Random selection of senteneces.</p>
-
-<h2>
+<ul>
+<li><p><code>-c[=complementPrefix]</code>: Generates a complement file for each part. If specified, complement file names will be generated using * * <code>complementPrefix</code> as the base name. Default complementPrefix is 'Comp'</p></li>
+<li><p><code>-r</code>: Random selection of senteneces.</p></li>
+</ul><h2>
 <a name="file-format" class="anchor" href="#file-format"><span class="octicon octicon-link"></span></a>File format:</h2>
 
 <p>Sentences are composed of tokens (words and symbols).</p>

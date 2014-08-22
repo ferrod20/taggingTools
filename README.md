@@ -26,7 +26,7 @@ tt -compare <goldStandard> <fileToCompare> <output> [options]
 
 Compares `goldStandard` file against `fileToCompare` generating a confusion matrix as output.
 
-`[options]` is one or more of the following:
+Where `[options]` is one or more of the following:
 
 * `-l`: Set latex output, default is text plain output.
 
@@ -51,7 +51,7 @@ Command:
 ```dos
 tt -split <file> <parts> [options]
 ```
-`[options]` is one or more of the following:
+Where `[options]` is one or more of the following:
 
 * `-c[=complementPrefix]`: Generates a complement file for each part. If specified, complement file names will be generated using * * `complementPrefix` as the base name. Default complementPrefix is 'Comp'
 

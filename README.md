@@ -28,20 +28,20 @@ Compares `goldStandard` file against `fileToCompare` generating a confusion matr
 
 `[options]` is one or more of the following:
 
-`-l`: Set latex output, default is text plain output.
+* `-l`: Set latex output, default is text plain output.
 
-`-t=<matrixTitle>`: Matrix title to be written on output file.
+* `-t=<matrixTitle>`: Matrix title to be written on output file.
 
-`-rt=<rowTitle>`: Row title to be written on output file.
+* `-rt=<rowTitle>`: Row title to be written on output file.
 
-`-ct=<columnTitle>`: Column title to be written on output file.
+* `-ct=<columnTitle>`: Column title to be written on output file.
 
-`-SC=<specificCellsFile>`: Use a custom file to set specific cells to be shown.
+* `-SC=<specificCellsFile>`: Use a custom file to set specific cells to be shown.
 
-`-T=<translationFile>`: Specify a custom tags translation file to be used on comparison. The 
+* `-T=<translationFile>`: Specify a custom tags translation file to be used on comparison. The 
 translation is applied to `fileToCompare` tags in order to convert them to goldStandard tags.
 
-`-s=<size>`: If latex output is set, size sets matrix size. If plain text output is set, size sets quantity of different words for each cell.
+* `-s=<size>`: If latex output is set, size sets matrix size. If plain text output is set, size sets quantity of different words for each cell.
 
 ##Files splitter:
 This tool splits a file in several parts, preserving sentences.
@@ -53,9 +53,9 @@ tt -split <file> <parts> [options]
 ```
 `[options]` is one or more of the following:
 
-`-c[=complementPrefix]`: Generates a complement file for each part. If specified, complement file names will be generated using `complementPrefix` as the base name. Default complementPrefix is 'Comp'
+* `-c[=complementPrefix]`: Generates a complement file for each part. If specified, complement file names will be generated using * * `complementPrefix` as the base name. Default complementPrefix is 'Comp'
 
-`-r`: Random selection of senteneces.
+* `-r`: Random selection of senteneces.
 
 ##File format:
 Sentences are composed of tokens (words and symbols).

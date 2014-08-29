@@ -69,3 +69,7 @@ Example:
 
 ##Binaries:
 Linux and Windows binaries are available [here](https://github.com/ferrod20/taggingTools/tree/binaries)
+
+## License
+
+Tagging Tools is released under the [MIT License](http://opensource.org/licenses/MIT).
